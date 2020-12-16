@@ -1,0 +1,59 @@
+﻿@model MyWeb.ViewModels.System.Users.LoginRequest
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var culture = CultureInfo.CurrentCulture.Name;
+}
+
+<div class="span9">
+    <ul class="breadcrumb">
+        <li><a href="/">Trang chủ</a> <span class="divider">/</span></li>
+        <li class="active">Đăng nhập</li>
+    </ul>
+    <h3> Đăng nhập</h3>
+    <hr class="soft" />
+
+    <div class="row">
+        <div class="span4">
+            <div class="well">
+                <h5>TÀI KHOẢN CỦA BẠN</h5><br />
+                Nhập địa chỉ e-mail của bạn để tạo tài khoản.<br /><br /><br />
+                <form action="register.html">
+                    <div class="controls">
+                        <a href="/@culture/Account/Register" class="btn block">Tạo tài khoản của bạn</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="span1"> &nbsp;</div>
+        <div class="span4">
+            <div class="well">
+                <h5>Nhập thông tin tài khoản mật khẩu: </h5>
+                <form action="/@culture/Account/Login" method="post">
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail1">Tên tài khoản:</label>
+                        <div class="controls">
+                            <input class="span3" type="text" asp-for="UserName" placeholder="nhập tên tài khoản">
+                            <span asp-validation-for="UserName" class="text-error"></span>
+
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <label class="control-label" for="inputPassword1">Mật khẩu</label>
+                        <div class="controls">
+                            <input type="password" class="span3" asp-for="Password" placeholder="mật khẩu">
+                            <span asp-validation-for="Password" class="text-error"></span>
+
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="controls">
+                            <button type="submit" class="btn">Đăng nhập</button> <a href="forgetpass.html">Quên mật khẩu?</a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</div>

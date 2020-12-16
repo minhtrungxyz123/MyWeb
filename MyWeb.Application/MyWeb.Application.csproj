@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App" />
+	</ItemGroup>
+	<ItemGroup>
+	  <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="6.8.0" />
+	</ItemGroup>
+	<ItemGroup>
+	  <ProjectReference Include="..\MyWeb.Utilities\MyWeb.Utilities.csproj" />
+	  <ProjectReference Include="..\MyWeb.viewmodel\MyWeb.ViewModels.csproj" />
+	  <ProjectReference Include="..\MyWebLapTop.Data\MyWebLapTop.Data.csproj" />
+	</ItemGroup>
+
+</Project>

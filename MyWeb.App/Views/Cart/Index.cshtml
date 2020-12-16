@@ -1,0 +1,47 @@
+﻿@{ ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml"; }
+@{ var culture = CultureInfo.CurrentCulture.Name; }
+
+
+@section scripts{
+    <script src="~/js/cart.js"></script>
+    <script>
+        var cartController = new CartController();
+        cartController.initialize();
+    </script>
+}
+
+<ul class="breadcrumb">
+    <li><a href="/">Trang chủ</a> <span class="divider">/</span></li>
+    <li class="active"> Giỏ hàng của bạn</li>
+</ul>
+
+<h3>
+    GIỎ HÀNG CỦA BẠN [ <small><span id="lbl_number_of_items">0</span> (Sản phẩm) </small>]
+    <a href="/" class="btn btn-large pull-right"><i class="icon-arrow-left"></i> Tiếp tục mua sắm </a>
+</h3>
+
+<hr class="soft" />
+
+<table class="table table-bordered" id="tbl_cart">
+    <thead>
+        <tr>
+            <th>Sản phẩm</th>
+            <th>Thông tin chi tiết</th>
+            <th>Số lượng/Cập nhật</th>
+            <th>Giá</th>
+            <th>Tổng:</th>
+        </tr>
+    </thead>
+    <tbody id="cart_body">
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="4" style="text-align:right"><strong>Tổng Tiền =</strong></td>
+            <td class="label label-important" style="display:block"> <strong> <span id="lbl_total"></span> </strong></td>
+        </tr>
+    </tfoot>
+</table>
+
+<a href="/" class="btn btn-large"><i class="icon-arrow-left"></i> Tiếp tục mua sắm </a>
+<a href="/@culture/Cart/Checkout" class="btn btn-large pull-right">Thanh Toán <i class="icon-arrow-right"></i></a>

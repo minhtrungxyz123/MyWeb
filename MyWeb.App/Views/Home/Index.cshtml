@@ -1,0 +1,235 @@
+﻿@model HomeViewModel
+@using MyWeb.ViewModels.Catalog.Products;
+@inject LazZiya.ExpressLocalization.ISharedCultureLocalizer _loc;
+@inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
+
+@{ var culture = CultureInfo.CurrentCulture.Name; }
+@{ ViewData["Title"] = "Home Page"; }
+@section slider{
+    <div id="carouselBlk">
+        <div id="myCarousel" class="carousel slide">
+            <div class="carousel-inner">
+                @for (int index = 0; index < Model.Slides.Count; index++)
+                {
+                    var slide = Model.Slides[index];
+<div class="item @(index == 0?"active":"")">
+    <div class="container">
+        <a href="@slide.Url"><img style="width:100%" src="@slide.Image" alt="@slide.Name" /></a>
+        <div class="carousel-caption">
+            <h4>@slide.Name</h4>
+            <p>@slide.Description</p>
+        </div>
+    </div>
+</div>          }
+            </div>
+            <a class="left carousel-control" href="#myCarousel" data-slide="prev">&lsaquo;</a>
+            <a class="right carousel-control" href="#myCarousel" data-slide="next">&rsaquo;</a>
+        </div>
+    </div>
+}
+
+	<div class="well well-small">
+			<h4>Sản phẩm nổi bật <small class="pull-right">Giảm giá cực sốc...</small></h4>
+			<div class="row-fluid">
+			<div id="featured" class="carousel slide">
+			<div class="carousel-inner">
+			  <div class="item active">
+			  <ul class="thumbnails">
+				<li class="span3">
+				  <div class="thumbnail">
+				  <i class="tag"></i>
+					<a href="@Url.Action("Tannhiet","Home")"><img src="themes/images/products/33693_tan_nhiet_cpu_cooler_master_hyper_212_led_0004_1.jpg" alt=""></a>
+					<div class="caption">
+                        <h5>Tản nhiệt CPU Cooler Master Hyper 212 LED</h5>
+					  <h4><a class="btn" href="@Url.Action("Tannhiet","Home")">Xem ngay</a></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+				  <i class="tag"></i>
+					<a href="@Url.Action("KhaySsd","Home")"><img src="themes/images/products/34921_khay_dat_hddssd_caddy_25_cho_laptop_loai_mong_goc_nghieng.jpg" alt=""></a>
+					<div class="caption">
+                        <h5>Khay lắp ổ cứng SSD cho laptop</h5>
+					  <h4><a class="btn" href="@Url.Action("KhaySsd","Home")">Xem ngay</a></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+				  <i class="tag"></i>
+					<a href="@Url.Action("ViewSonic","Home")"><img src="themes/images/products/36975_viewsonic_va2261__4_.png" alt=""></a>
+					<div class="caption">
+                        <h5>Màn hình Viewsonic VX2776-SMHD</h5>
+					   <h4><a class="btn" href="@Url.Action("ViewSonic","Home")">Xem ngay</a></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+				  <i class="tag"></i>
+					<a href="@Url.Action("Dell","Home")"><img src="themes/images/products/43572_dell_p2719h__4_.png" alt=""></a>
+					<div class="caption">
+                        <h5>Laptop Dell Gaming G3 15 3500</h5>
+					   <h4><a class="btn" href="@Url.Action("Dell","Home")">Xem ngay</a></h4>
+					</div>
+				  </div>
+				</li>
+			  </ul>
+			  </div>
+			   <div class="item">
+			  <ul class="thumbnails">
+				<li class="span3">
+				  <div class="thumbnail">
+				  <i class="tag"></i>
+					<a href="@Url.Action("TannhietColor","Home")"><img src="themes/images/products/46062_tan_nhiet_khi_cooler_master_masterair_621p_threadripper_tr4_0003_1__4_.jpg" alt=""></a>
+					<div class="caption">
+                        <h5>Tản Nhiệt Khí CoolerMaster</h5>
+					  <h4><a class="btn" href="@Url.Action("TannhietColor","Home")">Xem ngay</a></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+				  <i class="tag"></i>
+					<a href="@Url.Action("Ed273a","Home")"><img src="themes/images/products/47172_ed273a__1_.jpg" alt=""></a>
+					<div class="caption">
+                        <h5>Màn hình Acer ED273A TƯƠNG THÍCH G-SYNC</h5>
+					  <h4><a class="btn" href="@Url.Action("Ed273a","Home")">Xem ngay</a></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="@Url.Action("TaiNghe","Home")"><img src="themes/images/products/48195_tai_nghe_zidli_zh20_led_rgb_usb_3.jpg" alt=""></a>
+					<div class="caption">
+                        <h5>Tai nghe Kingston</h5>
+					   <h4><a class="btn" href="@Url.Action("TaiNghe","Home")">Xem ngay</a></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="@Url.Action("Macbook","Home")"><img src="themes/images/products/48952_apple_macbook_pro_15_touchbar_mv932_.png" alt=""></a>
+					<div class="caption">
+                        <h5>Apple Macbook Pro 15 Touchbar</h5>
+					   <h4><a class="btn" href="@Url.Action("Macbook","Home")">Xem ngay</a></h4>
+					</div>
+				  </div>
+				</li>
+			  </ul>
+			  </div>
+			   <div class="item">
+			  <ul class="thumbnails">
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="@Url.Action("ManhinhDell","Home")"><img src="themes/images/products/49179_u3219q__1_.jpg" alt=""></a>
+					<div class="caption">
+                        <h5>Màn hình Dell UltraSharp</h5>
+					  <h4><a class="btn" href="@Url.Action("ManhinhDell","Home")">Xem ngay</a></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="@Url.Action("PcAsus","Home")"><img src="themes/images/products/49332_gl10cs_vn021t.png" alt=""></a>
+					<div class="caption">
+                        <h5>PC Asus ROG Huracan G21CN</h5>
+					  <h4><a class="btn" href="@Url.Action("PcAsus","Home")">Xem ngay</a></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="@Url.Action("PcHNC","Home")"><img src="themes/images/products/52516_g15dh_vn001t_004.jpg" alt=""></a>
+					<div class="caption">
+                        <h5>HNC STANDARD WORKSTATION SW31</h5>
+					   <h4><a class="btn" href="@Url.Action("PcHNC","Home")">Xem ngay</a></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="@Url.Action("Main","Home")"><img src="themes/images/products/52345_rog_strix_z490_e_gaming_01_01.jpg" alt=""></a>
+					<div class="caption">
+                        <h5>Mainboard ASUS ROG</h5>
+					   <h4><a class="btn" href="@Url.Action("Main","Home")">Xem ngay</a></h4>
+					</div>
+				  </div>
+				</li>
+			  </ul>
+			  </div>
+			   <div class="item">
+			  <ul class="thumbnails">
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="@Url.Action("LaptopMsi","Home")"><img src="themes/images/products/53483_laptop_msi_gaming_gf75_thin_10scsr__208vn_.jpg" alt=""></a>
+					<div class="caption">
+                        <h5>Laptop Gaming MSI GF65</h5>
+					  <h4><a class="btn" href="@Url.Action("LaptopMsi","Home")">Xem ngay</a></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="@Url.Action("MacBookPro13","Home")"><img src="themes/images/products/53572_macbook_pro_13_touchbar__5_.jpg" alt=""></a>
+					<div class="caption">
+                        <h5>Apple Macbook Air 13 Đẹp - Mỏng Nhẹ - Pin Trâu</h5>
+					  <h4><a class="btn" href="@Url.Action("MacBookPro13","Home")">Xem ngay</a></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="@Url.Action("LaptopGamingMsi","Home")"><img src="themes/images/products/53483_laptop_msi_gaming_gf75_thin_10scsr__208vn_.jpg" alt=""></a>
+					<div class="caption">
+                        <h5>Laptop Gaming MSI GF65</h5>
+					   <h4><a class="btn" href="@Url.Action("LaptopGamingMsi","Home")">Xem ngay</a></h4>
+					</div>
+				  </div>
+				</li>
+				<li class="span3">
+				  <div class="thumbnail">
+					<a href="@Url.Action("PCENTHUSIAST","Home")"><img src="themes/images/products/53261_pcgm197.jpg" alt=""></a>
+					<div class="caption">
+                        <h5>PC ENTHUSIAST GAMING PLATINUM 01</h5>
+					   <h4><a class="btn" href="@Url.Action("PCENTHUSIAST","Home")">Xem ngay</a></h4>
+					</div>
+				  </div>
+				</li>
+			  </ul>
+			  </div>
+			  </div>
+			  <a class="left carousel-control" href="#featured" data-slide="prev">‹</a>
+			  <a class="right carousel-control" href="#featured" data-slide="next">›</a>
+			  </div>
+			  </div>
+		</div>
+<h4 localize-content>Latest Products </h4>
+<ul class="thumbnails">
+    @foreach (var item in Model.LatestProducts)
+    {
+        var url = $"/{culture}/{_loc["productUrl"]}/{item.Id}";
+<li class="span3">
+    <div class="thumbnail">
+        <a href="@url"><img src="@(Configuration["BaseAddress"]+item.ThumbnailImage)" alt="@item.Name" /></a>
+        <div class="caption">
+            <h5>@item.Name</h5>
+            <p>
+                @item.Description
+            </p>
+            <h4 style="text-align:center">
+                <a class="btn" href="@url">
+                    <i class="icon-zoom-in"></i>
+                </a>
+                <a class="btn btn-add-cart" data-id="@item.Id" href="#"><localize>Add to</localize>
+                    <i class="icon-shopping-cart"></i>
+                </a>
+                <a class="btn btn-primary" href="#">@item.Price</a>
+            </h4>
+        </div>
+    </div>
+
+</li>
+    }
+</ul>
