@@ -78,5 +78,6 @@ namespace MyWebLapTop.Data.EF
         public DbSet<ProductImage> ProductImages { get; set; }
 
         public DbSet<Slide> Slides { get; set; }
+        public DbSet<Feedback> Feedbacks { get; set; }
     }
 }
