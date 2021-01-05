@@ -125,6 +125,10 @@ namespace MyWeb.App.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+        public IActionResult Contact()
+        {
+            return View();
+        }
 
         public IActionResult SetCultureCookie(string cltr, string returnUrl)
         {
@@ -135,6 +139,10 @@ namespace MyWeb.App.Controllers
                 );
 
             return LocalRedirect(returnUrl);
+        }
+        public IActionResult ThongTinKhuyenMai()
+        {
+            return View();
         }
     }
 }

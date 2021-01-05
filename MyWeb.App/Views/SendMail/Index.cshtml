@@ -1,0 +1,97 @@
+﻿@model MyWeb.App.Models.EmailViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="mainBody">
+    <div class="container" style="width:auto">
+        <hr class="soften">
+        <h1>Liên Hệ với chúng tôi</h1>
+        <hr class="soften" />
+        <div class="row">
+            <div class="span4">
+                <h4>Chi tiết liên hệ</h4>
+                <p>
+                    A1-6 Lô 8A-Lê Hồng Phong<br /> Ngô Quyền, Hải Phòng.
+                    <br /><br />
+                    minhtrungxyz123@gmail.com<br />
+                    ﻿Tel: 1900 1903 (máy lẻ 301)<br />
+                    Fax: (022) 58830013<br />
+                    web: ShopComputer.com
+                </p>
+            </div>
+
+            <div class="span4">
+                <h4>Mở Cửa</h4>
+                <h5> Thứ hai - Thứ Sáu</h5>
+                <p>09:00am - 09:00pm<br /><br /></p>
+                <h5>Ngày Thứ Bảy</h5>
+                <p>09:00am - 07:00pm<br /><br /></p>
+                <h5>Chủ Nhật</h5>
+                <p>12:30pm - 06:00pm<br /><br /></p>
+            </div>
+
+
+            <div class="span4">
+                <h4>Gửi Email Cho chúng tôi</h4>
+                <form asp-action="Index">
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                    <div class="form-group">
+                        <label asp-for="To" class="control-label"></label>
+                        <input asp-for="To" class="form-control"style="width:300px;" />
+                        <span asp-validation-for="To" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Subject" class="control-label"></label>
+                        <input asp-for="Subject" class="form-control"style="width:300px;" />
+                        <span asp-validation-for="Subject" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <label asp-for="Body" class="control-label"></label>
+                        <textarea asp-for="Body" class="form-control"style="width: 300px; height: 150px;"></textarea>
+                        <span asp-validation-for="Body" class="text-danger"></span>
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Send Email" class="btn btn-primary" />
+                    </div>
+                    <h5>@ViewBag.message</h5>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+@*<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="To" class="control-label"></label>
+                <input asp-for="To" class="form-control" />
+                <span asp-validation-for="To" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Subject" class="control-label"></label>
+                <input asp-for="Subject" class="form-control" />
+                <span asp-validation-for="Subject" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Body" class="control-label"></label>
+                <input asp-for="Body" class="form-control" />
+                <span asp-validation-for="Body" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>*@
+

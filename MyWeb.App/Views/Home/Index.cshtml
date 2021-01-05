@@ -4,7 +4,7 @@
 @inject Microsoft.Extensions.Configuration.IConfiguration Configuration;
 
 @{ var culture = CultureInfo.CurrentCulture.Name; }
-@{ ViewData["Title"] = "Home Page"; }
+@{ ViewData["Title"] = "ComputerShop"; }
 @section slider{
     <div id="carouselBlk">
         <div id="myCarousel" class="carousel slide">
@@ -103,7 +103,7 @@
 				  <div class="thumbnail">
 					<a href="@Url.Action("TaiNghe","Home")"><img src="themes/images/products/48195_tai_nghe_zidli_zh20_led_rgb_usb_3.jpg" alt=""></a>
 					<div class="caption">
-                        <h5>Tai nghe Kingston</h5>
+                        <h5>Tai nghe Zidli ZH20 7.1 Led RGB USB</h5>
 					   <h4><a class="btn" href="@Url.Action("TaiNghe","Home")">Xem ngay</a></h4>
 					</div>
 				  </div>
@@ -125,7 +125,7 @@
 				  <div class="thumbnail">
 					<a href="@Url.Action("ManhinhDell","Home")"><img src="themes/images/products/49179_u3219q__1_.jpg" alt=""></a>
 					<div class="caption">
-                        <h5>Màn hình Dell UltraSharp</h5>
+                        <h5>Màn hình Asus VA24DQLB(23.8inch)</h5>
 					  <h4><a class="btn" href="@Url.Action("ManhinhDell","Home")">Xem ngay</a></h4>
 					</div>
 				  </div>
@@ -152,7 +152,7 @@
 				  <div class="thumbnail">
 					<a href="@Url.Action("Main","Home")"><img src="themes/images/products/52345_rog_strix_z490_e_gaming_01_01.jpg" alt=""></a>
 					<div class="caption">
-                        <h5>Mainboard ASUS ROG</h5>
+                        <h5>Mainboard Asus Z11PA-D8 (Dual CPU Server)</h5>
 					   <h4><a class="btn" href="@Url.Action("Main","Home")">Xem ngay</a></h4>
 					</div>
 				  </div>
@@ -174,7 +174,7 @@
 				  <div class="thumbnail">
 					<a href="@Url.Action("MacBookPro13","Home")"><img src="themes/images/products/53572_macbook_pro_13_touchbar__5_.jpg" alt=""></a>
 					<div class="caption">
-                        <h5>Apple Macbook Air 13 Đẹp - Mỏng Nhẹ - Pin Trâu</h5>
+                        <h5>Apple Macbook Air 13 Đẹp - Mỏng Nhẹ</h5>
 					  <h4><a class="btn" href="@Url.Action("MacBookPro13","Home")">Xem ngay</a></h4>
 					</div>
 				  </div>
@@ -225,7 +225,7 @@
                 <a class="btn btn-add-cart" data-id="@item.Id" href="#"><localize>Add to</localize>
                     <i class="icon-shopping-cart"></i>
                 </a>
-                <a class="btn btn-primary" href="#">@item.Price</a>
+                <a class="control-label">@item.Price<h>VNĐ</h></a>
             </h4>
         </div>
     </div>
