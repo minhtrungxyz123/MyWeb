@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 
 namespace MyWeb.App.Controllers
 {
-    [Authorize]
     public class SendMailController : Controller
     {
         public IActionResult Index()

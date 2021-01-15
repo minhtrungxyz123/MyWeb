@@ -27,7 +27,9 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Font-end", "Font-end", "{74
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWeb.App", "MyWeb.App\MyWeb.App.csproj", "{81FE2864-2FED-413C-A147-B2D7169B2543}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyWeb.ApiIntegration", "MyWeb.ApiIntegration\MyWeb.ApiIntegration.csproj", "{3FBCE599-E3D3-4A87-9552-BA08616900E8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MyWeb.ApiIntegration", "MyWeb.ApiIntegration\MyWeb.ApiIntegration.csproj", "{3FBCE599-E3D3-4A87-9552-BA08616900E8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebChat.App", "WebChat.App\WebChat.App.csproj", "{2B4214EA-EB56-4E86-98D1-C34ED8D6E15A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -67,6 +69,10 @@ Global
 		{3FBCE599-E3D3-4A87-9552-BA08616900E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3FBCE599-E3D3-4A87-9552-BA08616900E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3FBCE599-E3D3-4A87-9552-BA08616900E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B4214EA-EB56-4E86-98D1-C34ED8D6E15A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B4214EA-EB56-4E86-98D1-C34ED8D6E15A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B4214EA-EB56-4E86-98D1-C34ED8D6E15A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B4214EA-EB56-4E86-98D1-C34ED8D6E15A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +86,7 @@ Global
 		{903214A1-54C2-4FFA-996A-09FCFE49391E} = {77F02D77-D988-4D35-B152-585BC3DE1437}
 		{81FE2864-2FED-413C-A147-B2D7169B2543} = {745F815A-268B-4271-8FB9-B8FD64C32A76}
 		{3FBCE599-E3D3-4A87-9552-BA08616900E8} = {77F02D77-D988-4D35-B152-585BC3DE1437}
+		{2B4214EA-EB56-4E86-98D1-C34ED8D6E15A} = {6583BF1A-5151-416F-98B7-0062C924FA56}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {415AD504-C282-49BF-84F3-712745E75C28}

@@ -44,6 +44,9 @@ namespace MyWeb.ViewModels.Catalog.Products
         [Display(Name = "Khuyến mãi đi kèm")]
         public string SeoAlias { get; set; }
         public string LanguageId { set; get; }
+
+        [Required(ErrorMessage = "Bạn nhập thiếu!!")]
+        [Display(Name = "Ảnh sản phẩm")]
         public IFormFile ThumbnailImage { get; set; }
     }
 }

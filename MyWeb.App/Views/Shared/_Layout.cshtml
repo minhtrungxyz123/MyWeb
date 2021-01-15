@@ -73,9 +73,9 @@ else
                         <button type="submit" id="submitButton" class="btn btn-primary">Tìm</button>
                     </form>
                     <ul id="topMenu" class="nav pull-right">
-                        <li class=""><a asp-route-culture="@culture" localize-content">Specials Offer</a></li>
-                        <li class=""><a asp-route-culture="@culture" localize-content>Delivery</a></li>
-                        <li class=""><a href="@Url.Action("Index","SendMail")" >Liên Hệ</a></li>
+                        <li class=""><a href="@Url.Action("6","danh-muc")">Khuyến mãi</a></li>
+                        <li class=""><a href="@Url.Action("Chinhsachgiahang","All")">Giao Hàng</a></li>
+                        <li class=""><a href="@Url.Action("Index","SendMail")">Liên Hệ</a></li>
                         <li class="">
                             @if (User.Identity.IsAuthenticated)
                             {
@@ -117,32 +117,32 @@ else
                 <div class="span3">
                     <h5>TÀI KHOẢN</h5>
                     <a href="login.html">Tài Khoản của bạn</a>
-                    <a href="login.html">Thông tin cá nhân</a>
+                    <a href="@Url.Action("Details","User")">Thông tin cá nhân</a>
                     <a href="login.html">Địa chỉ</a>
-                    <a href="login.html">Giảm giá</a>
+                    <a href="@Url.Action("3","danh-muc")">Giảm giá</a>
                     <a href="login.html">Lịch sử đơn hàng</a>
                 </div>
                 <div class="span3">
                     <h5>THÔNG TIN</h5>
-                    <a href="contact.html">Liên hệ</a>
-                    <a href="register.html">Đăng ký</a>
-                    <a href="legal_notice.html">Thông báo</a>
-                    <a href="tac.html">Các điều khoản và điều kiện</a>
-                    <a href="faq.html">IT</a>
+                    <a href="@Url.Action("Index","SendMail")">Liên hệ</a>
+                    <a href="@Url.Action("Register","Account")">Đăng ký</a>
+                    <a href="@Url.Action("Gioithieu","All")">Giới Thiệu</a>
+                    <a href="@Url.Action("DieukienvaDieukhoan","All")">Các điều khoản và điều kiện</a>
+                    <a href="@Url.Action("Index","SendMail")">Góp ý, Khiếu nại</a>
                 </div>
                 <div class="span3">
                     <h5>VỀ CHÚNG TÔI</h5>
-                    <a href="#">Sản phẩm mới</a>
-                    <a href="#">Bán chạy nhất</a>
-                    <a href="special_offer.html">Uư đãi đặc biệt</a>
-                    <a href="#">Nhà sản xuất</a>
-                    <a href="#">Nhà cung cấp</a>
+                    <a href="@Url.Action("1","danh-muc")">Sản phẩm mới</a>
+                    <a href="@Url.Action("2","danh-muc")">Bán chạy nhất</a>
+                    <a href="@Url.Action("Muatragop","All")">Hướng dẫn mua trả góp</a>
+                    <a href="@Url.Action("Chinhsachgiahang","All")">Chính sách giao hàng</a>
+                    <a href="@Url.Action("Chinhsachhangchinhhang","All")">Chính sách hàng chính hãng</a>
                 </div>
                 <div id="socialMedia" class="span3 pull-right">
                     <h5>FANPAGE </h5>
-                    <a href="#"><img width="60" height="60" src="/themes/images/facebook.png" title="facebook" alt="facebook" /></a>
-                    <a href="#"><img width="60" height="60" src="/themes/images/twitter.png" title="twitter" alt="twitter" /></a>
-                    <a href="#"><img width="60" height="60" src="/themes/images/youtube.png" title="youtube" alt="youtube" /></a>
+                    <a href="https://www.facebook.com/www.hanoicomputer.vn"><img width="60" height="60" src="/themes/images/facebook.png" title="facebook" alt="facebook" /></a>
+                    <a href="https://twitter.com/"><img width="60" height="60" src="/themes/images/twitter.png" title="twitter" alt="twitter" /></a>
+                    <a href="https://www.youtube.com/channel/UCIoWNINN5sJcx1zboLXZmeA"><img width="60" height="60" src="/themes/images/youtube.png" title="youtube" alt="youtube" /></a>
                 </div>
             </div>
             <p class="pull-right">&copy; ComputerShop</p>
@@ -155,6 +155,8 @@ else
     <script src="/themes/js/bootshop.js"></script>
     <script src="/themes/js/jquery.lightbox-0.5.js"></script>
     <script src="/js/site.js"></script>
+    <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+    <div class="elfsight-app-f49186eb-6b2f-4e76-9464-cd9a4b302c5a"></div>
     <script>
         var site = new SiteController();
         site.initialize();

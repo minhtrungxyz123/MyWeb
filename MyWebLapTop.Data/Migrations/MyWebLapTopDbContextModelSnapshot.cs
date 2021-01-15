@@ -180,7 +180,7 @@ namespace MyWebLapTop.Data.Migrations
                         new
                         {
                             Id = new Guid("8d04dce2-969a-435d-bba4-df3f325983dc"),
-                            ConcurrencyStamp = "7fd9ff57-d49d-45ff-aa39-5154b4ca0554",
+                            ConcurrencyStamp = "6a0b6c7d-ab7a-44f4-9fa8-c17b6aff2d81",
                             Description = "Administrator role",
                             Name = "admin",
                             NormalizedName = "admin"
@@ -257,7 +257,7 @@ namespace MyWebLapTop.Data.Migrations
                         {
                             Id = new Guid("69bd714f-9576-45ba-b5b7-f00649be00de"),
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "64c2ffcb-d325-4740-a186-e6d0b0f239c0",
+                            ConcurrencyStamp = "50b6f36c-42da-4af6-af6c-c4509a54b68a",
                             Dob = new DateTime(2020, 1, 31, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Email = "minhtrungxyz123@gmail.com",
                             EmailConfirmed = true,
@@ -266,12 +266,31 @@ namespace MyWebLapTop.Data.Migrations
                             LockoutEnabled = false,
                             NormalizedEmail = "minhtrungxyz123@gmail.com",
                             NormalizedUserName = "admin",
-                            PasswordHash = "AQAAAAEAACcQAAAAEA26DSMW8cjKNJ7jKC326sJZx+wfcgQ7dq9VIrv/XRULrBWA0LFfZIsmGnl+yheCTA==",
+                            PasswordHash = "AQAAAAEAACcQAAAAEES3jw97x0ypuYcq6vChtHXgnCRNiIsSjjaE+1B8NpeQh5o2KP8SeRKNouhM7NwThA==",
                             PhoneNumberConfirmed = false,
                             SecurityStamp = "",
                             TwoFactorEnabled = false,
                             UserName = "admin"
                         });
+                });
+
+            modelBuilder.Entity("MyWebLapTop.Data.Entities.Bantin", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Noidung")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(200);
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Bantins");
                 });
 
             modelBuilder.Entity("MyWebLapTop.Data.Entities.Cart", b =>
@@ -436,6 +455,43 @@ namespace MyWebLapTop.Data.Migrations
                             SeoDescription = "Accessories of all kinds",
                             SeoTitle = "accessories of all kinds"
                         });
+                });
+
+            modelBuilder.Entity("MyWebLapTop.Data.Entities.Chitiet", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:IdentityIncrement", 1)
+                        .HasAnnotation("SqlServer:IdentitySeed", 1)
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<int>("IdBantin")
+                        .HasColumnType("int");
+
+                    b.Property<int>("Lanxem")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
+
+                    b.Property<DateTime>("Ngaydang")
+                        .HasColumnType("datetime2");
+
+                    b.Property<string>("Noidung")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)")
+                        .HasMaxLength(5000);
+
+                    b.Property<string>("Tieude")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(200)")
+                        .HasMaxLength(200);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdBantin");
+
+                    b.ToTable("Chitiets");
                 });
 
             modelBuilder.Entity("MyWebLapTop.Data.Entities.Contact", b =>
@@ -645,7 +701,7 @@ namespace MyWebLapTop.Data.Migrations
                         new
                         {
                             Id = 1,
-                            DateCreated = new DateTime(2020, 12, 22, 18, 28, 49, 508, DateTimeKind.Local).AddTicks(7174),
+                            DateCreated = new DateTime(2021, 1, 11, 21, 8, 25, 344, DateTimeKind.Local).AddTicks(2930),
                             OriginalPrice = 38989000m,
                             Price = 42499000m,
                             Stock = 0,
@@ -1004,6 +1060,15 @@ namespace MyWebLapTop.Data.Migrations
                     b.HasOne("MyWebLapTop.Data.Entities.Language", "Language")
                         .WithMany("CategoryTranslations")
                         .HasForeignKey("LanguageId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("MyWebLapTop.Data.Entities.Chitiet", b =>
+                {
+                    b.HasOne("MyWebLapTop.Data.Entities.Bantin", "Bantin")
+                        .WithMany("Chitiets")
+                        .HasForeignKey("IdBantin")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

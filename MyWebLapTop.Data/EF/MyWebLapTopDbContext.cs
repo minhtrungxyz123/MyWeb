@@ -46,6 +46,12 @@ namespace MyWebLapTop.Data.EF
 
             modelBuilder.Entity<IdentityRoleClaim<Guid>>().ToTable("AppRoleClaims");
             modelBuilder.Entity<IdentityUserToken<Guid>>().ToTable("AppUserTokens").HasKey(x => x.UserId);
+            //thêm bản tin
+            modelBuilder.ApplyConfiguration(new BantinConfiguration());
+            modelBuilder.ApplyConfiguration(new ChitietConfiguration());
+
+
+
 
             //Data seeding
             modelBuilder.Seed();
@@ -79,5 +85,7 @@ namespace MyWebLapTop.Data.EF
 
         public DbSet<Slide> Slides { get; set; }
         public DbSet<Feedback> Feedbacks { get; set; }
+        public  DbSet<Bantin>Bantins { get; set; }
+        public  DbSet<Chitiet>Chitiets { get; set; }
     }
 }
