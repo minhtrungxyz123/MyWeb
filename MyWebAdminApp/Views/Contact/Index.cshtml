@@ -1,0 +1,45 @@
+﻿@model MyWebAdminApp.Models.ContactViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3>Gửi Hóa Đơn Email Khách Hàng</h3>
+@ViewBag.msg
+<form method="post" enctype="multipart/form-data" asp-controller="contact" asp-action="send">
+    <table>
+        <tr>
+            <td>Tên Khách Hàng :</td>
+            <td><input type="text" asp-for="Name" style="margin: 10px;" /></td>
+        </tr>
+        <tr>
+            <td>Số Điện Thoại :</td>
+            <td><input type="text" asp-for="Phone"style="margin: 10px;" /></td>
+        </tr>
+        <tr>
+            <td>Email :</td>
+            <td><input type="text" asp-for="Email" style="margin: 10px;"/></td>
+        </tr>
+        <tr>
+            <td>Địa Chỉ :</td>
+            <td><input type="text" asp-for="Address" style="margin: 10px;" /></td>
+        </tr>
+        <tr>
+            <td>Tiêu Đề :</td>
+            <td><input type="text" asp-for="Subject" style="margin: 10px;" /></td>
+        </tr>
+        <tr>
+            <td valign="top">Lời Nhắn :</td>
+            <td><textarea asp-for="Content" rows="5" cols="20" style="margin: 10px;width: 300px;"></textarea></td>
+        </tr>
+        <tr>
+            <td>Nhập File</td>
+            <td><input type="file" name="attachments" multiple="multiple" /></td>
+        </tr>
+        <tr>
+            <td valign="top">&nbsp;</td>
+            <td><input type="submit" value="Send" /></td>
+        </tr>
+    </table>
+</form>
+

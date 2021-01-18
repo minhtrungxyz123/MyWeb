@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using MyWeb.ApiIntegration;
@@ -26,11 +27,12 @@ namespace MyWeb.App.Controllers
             return View();
         }
 
+        [Authorize]
         public IActionResult Checkout()
         {
             return View(GetCheckoutViewModel());
         }
-        [HttpPost]
+        [Authorize, HttpPost]
         public  IActionResult Checkout(CheckoutViewModel request)
         {
             var model = GetCheckoutViewModel();
